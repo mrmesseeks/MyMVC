@@ -68,7 +68,7 @@ class ArticlesController
             return;
         }
         $article->delete();
-        var_dump($article);
+
     }
     public function edit (int $articleId): void
     {

@@ -2,6 +2,7 @@
 
 namespace MyProject\Controllers;
 
+use function MyProject\Services\vardump;
 use MyProject\View\View;
 use MyProject\Models\Articles\Article;
 use MyProject\Services\Functions;
