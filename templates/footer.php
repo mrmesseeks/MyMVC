@@ -4,6 +4,7 @@
     <div class="sidebarHeader">Меню</div>
     <ul>
         <li><a href="/MVC/www/index.php">Главная страница</a></li>
+        <li><a href="/MVC/www/users/register">Зарегистрироваться</a></li>
     </ul>
 </td>
 </tr>

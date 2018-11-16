@@ -17,6 +17,12 @@
     font-size: 30px;
 }
 
+.errors {
+    background-color: red;
+    padding: 5px;
+    margin: 15px;
+}
+
 .footer {
     text-align: center;
 }
@@ -32,3 +38,4 @@
 a, a:visited {
     color: darkgreen;
 }
+
