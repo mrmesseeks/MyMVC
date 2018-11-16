@@ -21,16 +21,4 @@ class MainController
         $articles = Article::findAll();
         $this->view->renderHtml('main/main.php',['articles' => $articles]);
     }
-
-
-    public function sayHello(string $name)
-    {
-        $title = 'Страница приветствия';
-        $this->view->renderHtml('main/hello.php', ['name' => $name, 'title' => 'Страница приветствия']);
-    }
-    public function sayBye(string $name)
-    {
-        $title = 'Страница прощания';
-        $this->view->renderHtml('main/bye.php',['name'=>$name, 'title' => 'Страница прощания']);
-    }
 }

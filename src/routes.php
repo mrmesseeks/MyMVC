@@ -10,6 +10,4 @@ return [
     '~^articles/(\d+)/add~' => [ArticlesController::class, 'add'],
     '~^articles/(\d+)/delete~' => [ArticlesController::class, 'delete'],
     '~^$~' => [MainController::class, 'main'],
-    '~^hello/(.*)$~' => [MainController::class, 'sayHello'],
-    '~^bye/(.*)$~' => [MainController::class, 'sayBye']
 ];

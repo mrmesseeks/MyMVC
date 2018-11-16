@@ -18,8 +18,6 @@ class ArticlesController
 {
     private $view;
 
-    private $db;
-
     public function __construct()
     {
         $this->view = new View(__DIR__ . '/../../../templates');
