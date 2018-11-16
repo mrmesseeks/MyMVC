@@ -77,9 +77,7 @@ abstract class ActiveRecordEntity
     {
         $filteredProperties = array_filter($mappedProperties);
 
-        $colums = [];
         $paramsNames = [];
-        $index = 1;
         foreach ($filteredProperties as $columnName => $value) {
             $columns[]='`'.$columnName.'`';
             $paramName = ':' . $columnName;

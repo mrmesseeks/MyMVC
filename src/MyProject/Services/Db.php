@@ -2,6 +2,8 @@
 
 namespace MyProject\Services;
 
+use MyProject\Exceptions\DbException;
+
 class Db
 {
     private $pdo;
@@ -14,13 +16,16 @@ class Db
 
         $dns ='mysql:host='.$dbOptions['host'].'; dbname='.$dbOptions['dbname'];
 
-
-          $this->pdo = new \PDO(
-          $dns,
-          $dbOptions['user'],
-          $dbOptions['password']
-        );
-          $this->pdo->exec('SET NAMES UTF8');
+        try {
+            $this->pdo = new \PDO(
+                $dns,
+                $dbOptions['user'],
+                $dbOptions['password']
+            );
+            $this->pdo->exec('SET NAMES UTF8');
+        }   catch (\PDOException $e){
+            throw new DbException('Ошибка при подключении к базе данных: '. $e->getMessage());
+        }
     }
 
     public function query (string $sql, $params = [],$className = 'stdClass'): ?array

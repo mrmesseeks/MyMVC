@@ -11,7 +11,7 @@ namespace MyProject\Controllers;
 use MyProject\Models\Articles\Article;
 use MyProject\Models\Users\User;
 use MyProject\View\View;
-use MyProject\Services\Db;
+use MyProject\Exceptions\NotFoundExcrption;
 use MyProject\Services\Functions;
 
 class ArticlesController
@@ -28,7 +28,7 @@ class ArticlesController
         $article = Article::getById($articleId);
 
         if ($article === null) {
-            $this->view->renderHtml('errors/404.php', [], 404);
+            throw new NotFoundExcrption();
             return;
         }
 
@@ -60,11 +60,11 @@ class ArticlesController
     {
         $article = Article::getById($articleId);
 
-        if($article === null)
-        {
-            $this->view->renderHtml('errors/404.php',[],404);
+        if ($article === null) {
+            throw new NotFoundExcrption();
             return;
         }
+
         $article->delete();
 
     }
@@ -72,9 +72,8 @@ class ArticlesController
     {
         $article = Article::getById($articleId);
 
-        if($article === null)
-        {
-            $this->view->renderHtml('errors/404.php',[],404);
+        if ($article === null) {
+            throw new NotFoundExcrption();
             return;
         }
 
