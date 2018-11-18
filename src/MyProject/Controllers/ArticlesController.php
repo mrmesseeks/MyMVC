@@ -10,19 +10,13 @@ namespace MyProject\Controllers;
 
 use MyProject\Models\Articles\Article;
 use MyProject\Models\Users\User;
+use MyProject\Services\UsersAuthService;
 use MyProject\View\View;
 use MyProject\Exceptions\NotFoundExcrption;
 use MyProject\Services\Functions;
 
-class ArticlesController
+class ArticlesController extends AbstractController
 {
-    private $view;
-
-    public function __construct()
-    {
-        $this->view = new View(__DIR__ . '/../../../templates');
-    }
-
     public function view(int $articleId)
     {
         $article = Article::getById($articleId);
@@ -31,7 +25,6 @@ class ArticlesController
             throw new NotFoundExcrption();
             return;
         }
-
 
         $articleAuthor = User::getById($article->getAuthorId());
 

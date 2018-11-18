@@ -7,8 +7,6 @@ try {
         require_once __DIR__ . '/../src/' . $className . '.php';
     });
 
-//$controller = new MainController();
-
     $route = $_GET['route'] ?? '';
     $routes = require __DIR__ . '/../src/routes.php';
 
