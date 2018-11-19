@@ -15,7 +15,15 @@
     </tr>
     <tr>
         <td colspan="2" style="text-align: right">
-            <?= !empty($user) ? 'Привет, ' . $user->getNickname() : 'Войдите на сайт' ?>
+   <?php
+            if (!empty($user)){
+                echo 'Привет, ' . $user->getNickname() . ' | <a href ="/MVC/www/users/logout/"> Выйти</a>';
+            }
+            else
+            {
+                echo '<a href ="/MVC/www/users/login/"> Войти </a> | <a href ="/MVC/www/users/signup"> Зарегестрироватся </a>';
+            }
+            ?>
         </td>
     </tr>
     <tr>

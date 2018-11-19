@@ -6,6 +6,7 @@ namespace MyProject\Models\Users;
 
 use MyProject\Exceptions\InvalidArgumentException;
 use MyProject\Models\ActiveRecordEntity;
+use MyProject\Services\Functions;
 
 class User extends ActiveRecordEntity
 {
@@ -80,23 +81,24 @@ class User extends ActiveRecordEntity
 
     public static function login (array $loginData): User
     {
-        if (empty($loginData['email'])){
+        if (empty($loginData['email'])) {
             throw new InvalidArgumentException('Не передан email');
         }
-        if (empty($loginData['password'])){
+
+        if (empty($loginData['password'])) {
             throw new InvalidArgumentException('Не передан password');
         }
-        $user = User::findOneByColumn('email',$loginData['email']);
-        if ($user === null)
-        {
+
+        $user = User::findOneByColumn('email', $loginData['email']);
+        if ($user === null) {
             throw new InvalidArgumentException('Нет пользователя с таким email');
         }
-        if (!password_verify($loginData['password'],$user->getPasswordHash()))
-        {
-            throw new InvalidArgumentException('Не правильный пароль пользователя!');
+
+        if (!password_verify($loginData['password'], $user->getPasswordHash())) {
+            throw new InvalidArgumentException('Неправильный пароль');
         }
-        if (!$user->isConfirmed)
-        {
+
+        if (!$user->isConfirmed) {
             throw new InvalidArgumentException('Пользователь не подтверждён');
         }
 
@@ -105,4 +107,5 @@ class User extends ActiveRecordEntity
 
         return $user;
     }
+
 }

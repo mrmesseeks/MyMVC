@@ -17,6 +17,7 @@ use MyProject\Services\Functions;
 
 class ArticlesController extends AbstractController
 {
+
     public function view(int $articleId)
     {
         $article = Article::getById($articleId);
@@ -30,7 +31,7 @@ class ArticlesController extends AbstractController
 
         $this->view->renderHtml('articles/view.php', [
             'article' => $article,
-            'author' => $articleAuthor
+            'author' => $articleAuthor,
         ]);
     }
 

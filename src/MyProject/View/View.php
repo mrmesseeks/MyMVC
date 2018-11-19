@@ -2,6 +2,8 @@
 
 namespace MyProject\View;
 
+use MyProject\Services\Functions;
+
 class View
 {
     private $templatesPath;
@@ -21,6 +23,8 @@ class View
     public function renderHtml(string $templateName, array $vars = [], int $code = 200)
     {
         http_response_code($code);
+
+        extract($this->extraVars);
         extract($vars);
 
         ob_start();

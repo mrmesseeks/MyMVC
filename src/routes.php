@@ -12,5 +12,6 @@ return [
     '~^articles/(\d+)/delete~' => [ArticlesController::class, 'delete'],
     '~^users/signup$~' => [UsersController::class, 'signUp'],
     '~^users/login~' => [UsersController::class, 'login'],
+    '~^users/logout~' => [UsersController::class, 'logout'],
     '~^$~' => [MainController::class, 'main'],
 ];
