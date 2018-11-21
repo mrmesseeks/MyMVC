@@ -10,7 +10,7 @@
 <table class="layout">
     <tr>
         <td colspan="2" class="header">
-            Мой блог
+            <a href="/MVC/www/index.php">Мой блог</a>
         </td>
     </tr>
     <tr>

@@ -5,7 +5,8 @@
     <ul>
         <li><a href="/MVC/www/index.php">Главная страница</a></li>
         <li><a href="/MVC/www/users/signup">Зарегистрироваться</a></li>
-        <li><a href="/MVC/www/users/login">Войти</a></li
+        <li><a href="/MVC/www/users/login">Войти</a></li>
+        <li><a href="/MVC/www/articles/add.php">Написать пост</a></li>
     </ul>
 </td>
 </tr>

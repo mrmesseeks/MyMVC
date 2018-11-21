@@ -40,6 +40,10 @@ class User extends ActiveRecordEntity
     {
         $this->authToken = sha1(random_bytes(100)) . sha1(random_bytes(100));
     }
+    public function isAdmin () : string
+    {
+        return $this->role;
+    }
     public static function signUp(array $userData) : User
     {
         if (empty($userData['nickname'])){

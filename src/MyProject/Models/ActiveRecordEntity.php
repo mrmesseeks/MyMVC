@@ -53,7 +53,7 @@ abstract class ActiveRecordEntity
         if ($this->id !== null) {
             $this->update($mappedProperties);
         } else {
-            $this->insert($mappedProperties);
+          //  $this->insert($mappedProperties);
         }
     }
     private function update(array $mappedProperties): void

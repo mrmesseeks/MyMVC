@@ -10,8 +10,9 @@ return [
     '~^articles/(\d+)/edit$~' => [ArticlesController::class, 'edit'],
     '~^articles/(\d+)/add~' => [ArticlesController::class, 'add'],
     '~^articles/(\d+)/delete~' => [ArticlesController::class, 'delete'],
-    '~^users/signup$~' => [UsersController::class, 'signUp'],
+    '~^users/signup~' => [UsersController::class, 'signUp'],
     '~^users/login~' => [UsersController::class, 'login'],
     '~^users/logout~' => [UsersController::class, 'logout'],
+    '~^articles/add~' => [ArticlesController::class, 'add'],
     '~^$~' => [MainController::class, 'main'],
 ];
